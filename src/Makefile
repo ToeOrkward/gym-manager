@@ -100,7 +100,9 @@ CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
 am_interfaces_OBJECTS = main.$(OBJEXT) support.$(OBJEXT) \
-	interface.$(OBJEXT) callbacks.$(OBJEXT) member.$(OBJEXT)
+	interface.$(OBJEXT) callbacks.$(OBJEXT) member.$(OBJEXT) \
+	course.$(OBJEXT) coach.$(OBJEXT) event.$(OBJEXT) \
+	equipment.$(OBJEXT)
 interfaces_OBJECTS = $(am_interfaces_OBJECTS)
 am__DEPENDENCIES_1 =
 interfaces_DEPENDENCIES = $(am__DEPENDENCIES_1)
@@ -160,12 +162,12 @@ ETAGS = etags
 CTAGS = ctags
 am__DIST_COMMON = $(srcdir)/Makefile.in $(top_srcdir)/depcomp
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} "/home/ali/Projects/PROJET/integration/PROJEKT/Integrated project/missing" aclocal-1.15
+ACLOCAL = ${SHELL} "/home/ali/Desktop/Integrated project/missing" aclocal-1.15
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 1
-AUTOCONF = ${SHELL} "/home/ali/Projects/PROJET/integration/PROJEKT/Integrated project/missing" autoconf
-AUTOHEADER = ${SHELL} "/home/ali/Projects/PROJET/integration/PROJEKT/Integrated project/missing" autoheader
-AUTOMAKE = ${SHELL} "/home/ali/Projects/PROJET/integration/PROJEKT/Integrated project/missing" automake-1.15
+AUTOCONF = ${SHELL} "/home/ali/Desktop/Integrated project/missing" autoconf
+AUTOHEADER = ${SHELL} "/home/ali/Desktop/Integrated project/missing" autoheader
+AUTOMAKE = ${SHELL} "/home/ali/Desktop/Integrated project/missing" automake-1.15
 AWK = mawk
 CATALOGS = 
 CATOBJEXT = .gmo
@@ -200,7 +202,7 @@ LIBOBJS =
 LIBS = 
 LTLIBOBJS = 
 MAINT = 
-MAKEINFO = ${SHELL} "/home/ali/Projects/PROJET/integration/PROJEKT/Integrated project/missing" makeinfo
+MAKEINFO = ${SHELL} "/home/ali/Desktop/Integrated project/missing" makeinfo
 MKDIR_P = /bin/mkdir -p
 MKINSTALLDIRS = ./mkinstalldirs
 MSGFMT = /usr/bin/msgfmt
@@ -229,10 +231,10 @@ STRIP =
 USE_NLS = yes
 VERSION = 0.1
 XGETTEXT = /usr/bin/xgettext
-abs_builddir = /home/ali/Projects/PROJET/integration/PROJEKT/Integrated project/src
-abs_srcdir = /home/ali/Projects/PROJET/integration/PROJEKT/Integrated project/src
-abs_top_builddir = /home/ali/Projects/PROJET/integration/PROJEKT/Integrated project
-abs_top_srcdir = /home/ali/Projects/PROJET/integration/PROJEKT/Integrated project
+abs_builddir = /home/ali/Desktop/Integrated project/src
+abs_srcdir = /home/ali/Desktop/Integrated project/src
+abs_top_builddir = /home/ali/Desktop/Integrated project
+abs_top_srcdir = /home/ali/Desktop/Integrated project
 ac_ct_CC = gcc
 am__include = include
 am__leading_dot = .
@@ -251,7 +253,7 @@ host_alias =
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} '/home/ali/Projects/PROJET/integration/PROJEKT/Integrated project/install-sh'
+install_sh = ${SHELL} '/home/ali/Desktop/Integrated project/install-sh'
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -282,7 +284,11 @@ interfaces_SOURCES = \
 	support.c support.h \
 	interface.c interface.h \
 	callbacks.c callbacks.h \
-	member.c member.h
+	member.c member.h \
+	course.c course.h \
+	coach.c coach.h \
+	event.c event.h \
+	equipment.c equipment.h
 
 interfaces_LDADD = -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lfontconfig -lfreetype $(INTLLIBS) -lcurl
 all: all-am
@@ -372,6 +378,10 @@ distclean-compile:
 	-rm -f *.tab.c
 
 include ./$(DEPDIR)/callbacks.Po
+include ./$(DEPDIR)/coach.Po
+include ./$(DEPDIR)/course.Po
+include ./$(DEPDIR)/equipment.Po
+include ./$(DEPDIR)/event.Po
 include ./$(DEPDIR)/interface.Po
 include ./$(DEPDIR)/main.Po
 include ./$(DEPDIR)/member.Po

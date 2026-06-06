@@ -1,4 +1,4 @@
-member.o: member.c /usr/include/stdc-predef.h /usr/include/stdio.h \
+course.o: course.c /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -52,7 +52,7 @@ member.o: member.c /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
  /usr/include/strings.h \
  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
- /usr/include/x86_64-linux-gnu/bits/string_fortified.h member.h \
+ /usr/include/x86_64-linux-gnu/bits/string_fortified.h course.h \
  /usr/include/ctype.h
 
 /usr/include/stdc-predef.h:
@@ -175,6 +175,6 @@ member.o: member.c /usr/include/stdc-predef.h /usr/include/stdio.h \
 
 /usr/include/x86_64-linux-gnu/bits/string_fortified.h:
 
-member.h:
+course.h:
 
 /usr/include/ctype.h:
