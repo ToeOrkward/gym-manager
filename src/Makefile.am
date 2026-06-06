@@ -12,7 +12,11 @@ interfaces_SOURCES = \
 	support.c support.h \
 	interface.c interface.h \
 	callbacks.c callbacks.h \
-	member.c member.h
+	member.c member.h \
+	course.c course.h \
+	coach.c coach.h \
+	event.c event.h \
+	equipment.c equipment.h
 
 interfaces_LDADD = @PACKAGE_LIBS@ $(INTLLIBS) -lcurl
 
