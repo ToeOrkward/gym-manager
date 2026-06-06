@@ -5831,7 +5831,16 @@ void
 on_coach_add                           (GtkButton       *button,
                                         gpointer         user_data)
 {
+    GtkWidget *coach_manag;
+    GtkWidget *addCoachAdmin;
 
+    coach_manag = lookup_widget(button, "CoachManagAdmin");
+    if (coach_manag != NULL) {
+        gtk_widget_destroy(coach_manag);
+    }
+
+    addCoachAdmin = create_addCoachAdmin();
+    gtk_widget_show_all(addCoachAdmin);
 }
 
 
@@ -5839,7 +5848,16 @@ void
 on_coach_delete                        (GtkButton       *button,
                                         gpointer         user_data)
 {
+    GtkWidget *coach_manag;
+    GtkWidget *deleteCoach;
 
+    coach_manag = lookup_widget(button, "CoachManagAdmin");
+    if (coach_manag != NULL) {
+        gtk_widget_destroy(coach_manag);
+    }
+
+    deleteCoach = create_deleteCoach();
+    gtk_widget_show_all(deleteCoach);
 }
 
 
@@ -5847,7 +5865,16 @@ void
 on_coach_restore                       (GtkButton       *button,
                                         gpointer         user_data)
 {
+    GtkWidget *coach_manag;
+    GtkWidget *restoreCoach;
 
+    coach_manag = lookup_widget(button, "CoachManagAdmin");
+    if (coach_manag != NULL) {
+        gtk_widget_destroy(coach_manag);
+    }
+
+    restoreCoach = create_restoreCoach();
+    gtk_widget_show_all(restoreCoach);
 }
 
 
@@ -5855,6 +5882,15 @@ void
 on_coach_displayed                     (GtkButton       *button,
                                         gpointer         user_data)
 {
+    GtkWidget *coach_manag;
+    GtkWidget *rechercheCoach;
 
+    coach_manag = lookup_widget(button, "CoachManagAdmin");
+    if (coach_manag != NULL) {
+        gtk_widget_destroy(coach_manag);
+    }
+
+    rechercheCoach = create_rechercheCoach();
+    gtk_widget_show_all(rechercheCoach);
 }
 
