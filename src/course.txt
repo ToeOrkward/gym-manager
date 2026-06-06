@@ -1,0 +1,6 @@
+1234|Yoga|Beginner|Male only|2025-12-05|9|21|Available|mohamed|4
+123|Aerobics |Beginner|Male only|2025-12-03|9|20|Available|ali|3
+12345|Cardio|Beginner|Male only|2025-12-03|9|20|Complete|eya|5
+897|Yoga|Beginner|Mixed|2025-12-03|9|20|Cancelled|aya|9
+12334|Cardio|Beginner|Mixed|2025-12-31|13|20|Complete|ali|3
+112|Yoga|Beginner|Female only|2026-01-06|9|30|Complete|ali|3
