@@ -25,6 +25,7 @@ GtkWidget* create_ewrecherchecours (void);
 GtkWidget* create_ewdeletecous (void);
 GtkWidget* create_ewrestorecours (void);
 GtkWidget* create_ewstats (void);
+
 GtkWidget* create_CoachManagAdmin (void);
 GtkWidget* create_addCoachAdmin (void);
 GtkWidget* create_rechercheCoach (void);
