@@ -324,6 +324,15 @@ create_AdminDashboard (void)
   g_signal_connect ((gpointer) button14, "clicked",
                     G_CALLBACK (on_button14_clicked),
                     NULL);
+  g_signal_connect ((gpointer) button2, "clicked",
+                    G_CALLBACK (on_admin_coaches_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) button5, "clicked",
+                    G_CALLBACK (on_admin_events_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) button6, "clicked",
+                    G_CALLBACK (on_admin_equipments_clicked),
+                    NULL);
 
   /* Store pointers to all widgets, for use by lookup_widget(). */
   GLADE_HOOKUP_OBJECT_NO_REF (AdminDashboard, AdminDashboard, "AdminDashboard");

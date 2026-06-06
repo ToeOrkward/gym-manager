@@ -42,6 +42,18 @@ on_home2admindash_clicked              (GtkWidget       *object,
                                         gpointer         user_data);
 
 void
+on_admin_coaches_clicked               (GtkWidget       *object,
+                                        gpointer         user_data);
+
+void
+on_admin_events_clicked                (GtkWidget       *object,
+                                        gpointer         user_data);
+
+void
+on_admin_equipments_clicked            (GtkWidget       *object,
+                                        gpointer         user_data);
+
+void
 on_req_clicked                         (GtkWidget       *object,
                                         gpointer         user_data);
 
