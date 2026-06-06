@@ -5826,3 +5826,35 @@ if (current)
 
 
 
+
+void
+on_coach_add                           (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+on_coach_delete                        (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+on_coach_restore                       (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+on_coach_displayed                     (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
