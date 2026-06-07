@@ -6019,7 +6019,15 @@ on_coach_add_crud                      (GtkButton       *button,
                                        GTK_DIALOG_MODAL,
                                        GTK_MESSAGE_INFO,
                                        GTK_BUTTONS_OK,
-                                       "Coach saved successfully!");
+                                       "Coach saved successfully!\n"
+                                       "Hire date: %s\n"
+                                       "Experience: %d years\n"
+                                       "Contract duration: %d months\n"
+                                       "Status: %s",
+                                       hiring_date,
+                                       experience,
+                                       contract_duration,
+                                       startdate);
         gtk_entry_set_text(GTK_ENTRY(entry_firstname), "");
         gtk_entry_set_text(GTK_ENTRY(entry_lastname), "");
         gtk_entry_set_text(GTK_ENTRY(entry_phone), "");
