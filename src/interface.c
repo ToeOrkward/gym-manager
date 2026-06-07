@@ -4972,7 +4972,6 @@ create_rechercheCoach (void)
   GtkWidget *rechercheCoach;
   GtkWidget *fixed26;
   GtkWidget *image131;
-  GtkWidget *label209;
   GtkWidget *label211;
   GtkWidget *label212;
   GtkWidget *entry33;
@@ -4981,18 +4980,19 @@ create_rechercheCoach (void)
   GtkWidget *label214;
   GtkWidget *treeview6;
   GtkWidget *textview11;
-  GtkWidget *radiobutton21;
-  GSList *radiobutton21_group = NULL;
-  GtkWidget *radiobutton22;
-  GtkWidget *radiobutton23;
   GtkWidget *label215;
   GtkWidget *button71;
   GtkWidget *alignment94;
   GtkWidget *hbox94;
   GtkWidget *image132;
   GtkWidget *label210;
+  GtkWidget *radiobutton21;
+  GSList *radiobutton21_group = NULL;
+  GtkWidget *radiobutton22;
+  GtkWidget *radiobutton23;
   GtkWidget *button73;
   GtkWidget *button72;
+  GtkWidget *label209;
   GtkWidget *button77;
 
   rechercheCoach = gtk_window_new (GTK_WINDOW_TOPLEVEL);
@@ -5006,13 +5006,6 @@ create_rechercheCoach (void)
   gtk_widget_show (image131);
   gtk_fixed_put (GTK_FIXED (fixed26), image131, 23, 13);
   gtk_widget_set_size_request (image131, 70, 39);
-
-  label209 = gtk_label_new (_("<span foreground=\"sea green\" font_desc=\"Century Schoolbook L Bold 16\">Coach list</span>"));
-  gtk_widget_show (label209);
-  gtk_fixed_put (GTK_FIXED (fixed26), label209, 376, 16);
-  gtk_widget_set_size_request (label209, 313, 41);
-  gtk_label_set_use_markup (GTK_LABEL (label209), TRUE);
-  gtk_misc_set_alignment (GTK_MISC (label209), 0.48, 0.5);
 
   label211 = gtk_label_new (_("<span foreground=\"dark orange\" font_desc=\"Century Schoolbook L Bold 10\">Search coach</span>"));
   gtk_widget_show (label211);
@@ -5058,27 +5051,6 @@ create_rechercheCoach (void)
   gtk_fixed_put (GTK_FIXED (fixed26), textview11, 744, 152);
   gtk_widget_set_size_request (textview11, 209, 130);
 
-  radiobutton21 = gtk_radio_button_new_with_mnemonic (NULL, _("Male"));
-  gtk_widget_show (radiobutton21);
-  gtk_fixed_put (GTK_FIXED (fixed26), radiobutton21, 344, 97);
-  gtk_widget_set_size_request (radiobutton21, 66, 24);
-  gtk_radio_button_set_group (GTK_RADIO_BUTTON (radiobutton21), radiobutton21_group);
-  radiobutton21_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (radiobutton21));
-
-  radiobutton22 = gtk_radio_button_new_with_mnemonic (NULL, _("Female"));
-  gtk_widget_show (radiobutton22);
-  gtk_fixed_put (GTK_FIXED (fixed26), radiobutton22, 405, 97);
-  gtk_widget_set_size_request (radiobutton22, 79, 24);
-  gtk_radio_button_set_group (GTK_RADIO_BUTTON (radiobutton22), radiobutton21_group);
-  radiobutton21_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (radiobutton22));
-
-  radiobutton23 = gtk_radio_button_new_with_mnemonic (NULL, _("All"));
-  gtk_widget_show (radiobutton23);
-  gtk_fixed_put (GTK_FIXED (fixed26), radiobutton23, 485, 97);
-  gtk_widget_set_size_request (radiobutton23, 124, 24);
-  gtk_radio_button_set_group (GTK_RADIO_BUTTON (radiobutton23), radiobutton21_group);
-  radiobutton21_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (radiobutton23));
-
   label215 = gtk_label_new (_("<span foreground=\"dark orange\" font_desc=\"Century Schoolbook L Bold 10\">Coach Information</span>"));
   gtk_widget_show (label215);
   gtk_fixed_put (GTK_FIXED (fixed26), label215, 768, 80);
@@ -5107,6 +5079,27 @@ create_rechercheCoach (void)
   gtk_widget_show (label210);
   gtk_box_pack_start (GTK_BOX (hbox94), label210, FALSE, FALSE, 0);
 
+  radiobutton21 = gtk_radio_button_new_with_mnemonic (NULL, _("Male"));
+  gtk_widget_show (radiobutton21);
+  gtk_fixed_put (GTK_FIXED (fixed26), radiobutton21, 344, 97);
+  gtk_widget_set_size_request (radiobutton21, 66, 24);
+  gtk_radio_button_set_group (GTK_RADIO_BUTTON (radiobutton21), radiobutton21_group);
+  radiobutton21_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (radiobutton21));
+
+  radiobutton22 = gtk_radio_button_new_with_mnemonic (NULL, _("Female"));
+  gtk_widget_show (radiobutton22);
+  gtk_fixed_put (GTK_FIXED (fixed26), radiobutton22, 405, 97);
+  gtk_widget_set_size_request (radiobutton22, 79, 24);
+  gtk_radio_button_set_group (GTK_RADIO_BUTTON (radiobutton22), radiobutton21_group);
+  radiobutton21_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (radiobutton22));
+
+  radiobutton23 = gtk_radio_button_new_with_mnemonic (NULL, _("All"));
+  gtk_widget_show (radiobutton23);
+  gtk_fixed_put (GTK_FIXED (fixed26), radiobutton23, 485, 97);
+  gtk_widget_set_size_request (radiobutton23, 124, 24);
+  gtk_radio_button_set_group (GTK_RADIO_BUTTON (radiobutton23), radiobutton21_group);
+  radiobutton21_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (radiobutton23));
+
   button73 = gtk_button_new_with_mnemonic (_("Cancel"));
   gtk_widget_show (button73);
   gtk_fixed_put (GTK_FIXED (fixed26), button73, 472, 128);
@@ -5117,20 +5110,35 @@ create_rechercheCoach (void)
   gtk_fixed_put (GTK_FIXED (fixed26), button72, 312, 128);
   gtk_widget_set_size_request (button72, 146, 29);
 
+  label209 = gtk_label_new (_("<span foreground=\"sea green\" font_desc=\"Century Schoolbook L Bold 16\">Coach list</span>"));
+  gtk_widget_show (label209);
+  gtk_fixed_put (GTK_FIXED (fixed26), label209, 376, 16);
+  gtk_widget_set_size_request (label209, 313, 41);
+  gtk_label_set_use_markup (GTK_LABEL (label209), TRUE);
+  gtk_misc_set_alignment (GTK_MISC (label209), 0.48, 0.5);
+
   button77 = gtk_button_new_with_mnemonic (_("Modify"));
   gtk_widget_show (button77);
   gtk_fixed_put (GTK_FIXED (fixed26), button77, 776, 304);
   gtk_widget_set_size_request (button77, 146, 29);
 
+  g_signal_connect ((gpointer) rechercheCoach, "show",
+                    G_CALLBACK (on_rechercheCoach_show),
+                    NULL);
   g_signal_connect ((gpointer) treeview6, "cursor_changed",
-                    G_CALLBACK (on_treeview1_cursor_changed),
+                    G_CALLBACK (on_treeview_coach_display),
+                    NULL);
+  g_signal_connect ((gpointer) button72, "clicked",
+                    G_CALLBACK (on_coach_search),
+                    NULL);
+  g_signal_connect ((gpointer) button77, "clicked",
+                    G_CALLBACK (on_coach_modifyed),
                     NULL);
 
   /* Store pointers to all widgets, for use by lookup_widget(). */
   GLADE_HOOKUP_OBJECT_NO_REF (rechercheCoach, rechercheCoach, "rechercheCoach");
   GLADE_HOOKUP_OBJECT (rechercheCoach, fixed26, "fixed26");
   GLADE_HOOKUP_OBJECT (rechercheCoach, image131, "image131");
-  GLADE_HOOKUP_OBJECT (rechercheCoach, label209, "label209");
   GLADE_HOOKUP_OBJECT (rechercheCoach, label211, "label211");
   GLADE_HOOKUP_OBJECT (rechercheCoach, label212, "label212");
   GLADE_HOOKUP_OBJECT (rechercheCoach, entry33, "entry33");
@@ -5139,17 +5147,18 @@ create_rechercheCoach (void)
   GLADE_HOOKUP_OBJECT (rechercheCoach, label214, "label214");
   GLADE_HOOKUP_OBJECT (rechercheCoach, treeview6, "treeview6");
   GLADE_HOOKUP_OBJECT (rechercheCoach, textview11, "textview11");
-  GLADE_HOOKUP_OBJECT (rechercheCoach, radiobutton21, "radiobutton21");
-  GLADE_HOOKUP_OBJECT (rechercheCoach, radiobutton22, "radiobutton22");
-  GLADE_HOOKUP_OBJECT (rechercheCoach, radiobutton23, "radiobutton23");
   GLADE_HOOKUP_OBJECT (rechercheCoach, label215, "label215");
   GLADE_HOOKUP_OBJECT (rechercheCoach, button71, "button71");
   GLADE_HOOKUP_OBJECT (rechercheCoach, alignment94, "alignment94");
   GLADE_HOOKUP_OBJECT (rechercheCoach, hbox94, "hbox94");
   GLADE_HOOKUP_OBJECT (rechercheCoach, image132, "image132");
   GLADE_HOOKUP_OBJECT (rechercheCoach, label210, "label210");
+  GLADE_HOOKUP_OBJECT (rechercheCoach, radiobutton21, "radiobutton21");
+  GLADE_HOOKUP_OBJECT (rechercheCoach, radiobutton22, "radiobutton22");
+  GLADE_HOOKUP_OBJECT (rechercheCoach, radiobutton23, "radiobutton23");
   GLADE_HOOKUP_OBJECT (rechercheCoach, button73, "button73");
   GLADE_HOOKUP_OBJECT (rechercheCoach, button72, "button72");
+  GLADE_HOOKUP_OBJECT (rechercheCoach, label209, "label209");
   GLADE_HOOKUP_OBJECT (rechercheCoach, button77, "button77");
 
   return rechercheCoach;

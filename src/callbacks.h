@@ -426,3 +426,19 @@ on_coach_displayed                     (GtkButton       *button,
 void
 on_coach_add_crud                      (GtkButton       *button,
                                         gpointer         user_data);
+
+void
+on_rechercheCoach_show                 (GtkWidget       *widget,
+                                        gpointer         user_data);
+
+void
+on_treeview_coach_display              (GtkTreeView     *treeview,
+                                        gpointer         user_data);
+
+void
+on_coach_search                        (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_coach_modifyed                      (GtkButton       *button,
+                                        gpointer         user_data);

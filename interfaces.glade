@@ -11690,6 +11690,7 @@ OnLeave</property>
   <property name="gravity">GDK_GRAVITY_NORTH_WEST</property>
   <property name="focus_on_map">True</property>
   <property name="urgency_hint">False</property>
+  <signal name="show" handler="on_rechercheCoach_show" last_modification_time="Sun, 07 Jun 2026 00:30:59 GMT"/>
 
   <child>
     <widget class="GtkFixed" id="fixed26">
@@ -11709,32 +11710,6 @@ OnLeave</property>
 	<packing>
 	  <property name="x">23</property>
 	  <property name="y">13</property>
-	</packing>
-      </child>
-
-      <child>
-	<widget class="GtkLabel" id="label209">
-	  <property name="width_request">313</property>
-	  <property name="height_request">41</property>
-	  <property name="visible">True</property>
-	  <property name="label" translatable="yes">&lt;span foreground=&quot;sea green&quot; font_desc=&quot;Century Schoolbook L Bold 16&quot;&gt;Coach list&lt;/span&gt;</property>
-	  <property name="use_underline">False</property>
-	  <property name="use_markup">True</property>
-	  <property name="justify">GTK_JUSTIFY_LEFT</property>
-	  <property name="wrap">False</property>
-	  <property name="selectable">False</property>
-	  <property name="xalign">0.479999989271</property>
-	  <property name="yalign">0.5</property>
-	  <property name="xpad">0</property>
-	  <property name="ypad">0</property>
-	  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
-	  <property name="width_chars">-1</property>
-	  <property name="single_line_mode">False</property>
-	  <property name="angle">0</property>
-	</widget>
-	<packing>
-	  <property name="x">376</property>
-	  <property name="y">16</property>
 	</packing>
       </child>
 
@@ -11895,7 +11870,7 @@ OnLeave</property>
 	  <property name="fixed_height_mode">False</property>
 	  <property name="hover_selection">False</property>
 	  <property name="hover_expand">False</property>
-	  <signal name="cursor_changed" handler="on_treeview1_cursor_changed" last_modification_time="Wed, 10 Dec 2025 21:20:50 GMT"/>
+	  <signal name="cursor_changed" handler="on_treeview_coach_display" last_modification_time="Sun, 07 Jun 2026 00:28:13 GMT"/>
 	</widget>
 	<packing>
 	  <property name="x">24</property>
@@ -11926,68 +11901,6 @@ OnLeave</property>
 	<packing>
 	  <property name="x">744</property>
 	  <property name="y">152</property>
-	</packing>
-      </child>
-
-      <child>
-	<widget class="GtkRadioButton" id="radiobutton21">
-	  <property name="width_request">66</property>
-	  <property name="height_request">24</property>
-	  <property name="visible">True</property>
-	  <property name="can_focus">True</property>
-	  <property name="label" translatable="yes">Male</property>
-	  <property name="use_underline">True</property>
-	  <property name="relief">GTK_RELIEF_NORMAL</property>
-	  <property name="focus_on_click">True</property>
-	  <property name="active">False</property>
-	  <property name="inconsistent">False</property>
-	  <property name="draw_indicator">True</property>
-	</widget>
-	<packing>
-	  <property name="x">344</property>
-	  <property name="y">97</property>
-	</packing>
-      </child>
-
-      <child>
-	<widget class="GtkRadioButton" id="radiobutton22">
-	  <property name="width_request">79</property>
-	  <property name="height_request">24</property>
-	  <property name="visible">True</property>
-	  <property name="can_focus">True</property>
-	  <property name="label" translatable="yes">Female</property>
-	  <property name="use_underline">True</property>
-	  <property name="relief">GTK_RELIEF_NORMAL</property>
-	  <property name="focus_on_click">True</property>
-	  <property name="active">False</property>
-	  <property name="inconsistent">False</property>
-	  <property name="draw_indicator">True</property>
-	  <property name="group">radiobutton21</property>
-	</widget>
-	<packing>
-	  <property name="x">405</property>
-	  <property name="y">97</property>
-	</packing>
-      </child>
-
-      <child>
-	<widget class="GtkRadioButton" id="radiobutton23">
-	  <property name="width_request">124</property>
-	  <property name="height_request">24</property>
-	  <property name="visible">True</property>
-	  <property name="can_focus">True</property>
-	  <property name="label" translatable="yes">All</property>
-	  <property name="use_underline">True</property>
-	  <property name="relief">GTK_RELIEF_NORMAL</property>
-	  <property name="focus_on_click">True</property>
-	  <property name="active">False</property>
-	  <property name="inconsistent">False</property>
-	  <property name="draw_indicator">True</property>
-	  <property name="group">radiobutton21</property>
-	</widget>
-	<packing>
-	  <property name="x">485</property>
-	  <property name="y">97</property>
 	</packing>
       </child>
 
@@ -12096,6 +12009,68 @@ OnLeave</property>
       </child>
 
       <child>
+	<widget class="GtkRadioButton" id="radiobutton21">
+	  <property name="width_request">66</property>
+	  <property name="height_request">24</property>
+	  <property name="visible">True</property>
+	  <property name="can_focus">True</property>
+	  <property name="label" translatable="yes">Male</property>
+	  <property name="use_underline">True</property>
+	  <property name="relief">GTK_RELIEF_NORMAL</property>
+	  <property name="focus_on_click">True</property>
+	  <property name="active">False</property>
+	  <property name="inconsistent">False</property>
+	  <property name="draw_indicator">True</property>
+	</widget>
+	<packing>
+	  <property name="x">344</property>
+	  <property name="y">97</property>
+	</packing>
+      </child>
+
+      <child>
+	<widget class="GtkRadioButton" id="radiobutton22">
+	  <property name="width_request">79</property>
+	  <property name="height_request">24</property>
+	  <property name="visible">True</property>
+	  <property name="can_focus">True</property>
+	  <property name="label" translatable="yes">Female</property>
+	  <property name="use_underline">True</property>
+	  <property name="relief">GTK_RELIEF_NORMAL</property>
+	  <property name="focus_on_click">True</property>
+	  <property name="active">False</property>
+	  <property name="inconsistent">False</property>
+	  <property name="draw_indicator">True</property>
+	  <property name="group">radiobutton21</property>
+	</widget>
+	<packing>
+	  <property name="x">405</property>
+	  <property name="y">97</property>
+	</packing>
+      </child>
+
+      <child>
+	<widget class="GtkRadioButton" id="radiobutton23">
+	  <property name="width_request">124</property>
+	  <property name="height_request">24</property>
+	  <property name="visible">True</property>
+	  <property name="can_focus">True</property>
+	  <property name="label" translatable="yes">All</property>
+	  <property name="use_underline">True</property>
+	  <property name="relief">GTK_RELIEF_NORMAL</property>
+	  <property name="focus_on_click">True</property>
+	  <property name="active">False</property>
+	  <property name="inconsistent">False</property>
+	  <property name="draw_indicator">True</property>
+	  <property name="group">radiobutton21</property>
+	</widget>
+	<packing>
+	  <property name="x">485</property>
+	  <property name="y">97</property>
+	</packing>
+      </child>
+
+      <child>
 	<widget class="GtkButton" id="button73">
 	  <property name="width_request">146</property>
 	  <property name="height_request">29</property>
@@ -12122,10 +12097,37 @@ OnLeave</property>
 	  <property name="use_underline">True</property>
 	  <property name="relief">GTK_RELIEF_NORMAL</property>
 	  <property name="focus_on_click">True</property>
+	  <signal name="clicked" handler="on_coach_search" last_modification_time="Sun, 07 Jun 2026 00:25:45 GMT"/>
 	</widget>
 	<packing>
 	  <property name="x">312</property>
 	  <property name="y">128</property>
+	</packing>
+      </child>
+
+      <child>
+	<widget class="GtkLabel" id="label209">
+	  <property name="width_request">313</property>
+	  <property name="height_request">41</property>
+	  <property name="visible">True</property>
+	  <property name="label" translatable="yes">&lt;span foreground=&quot;sea green&quot; font_desc=&quot;Century Schoolbook L Bold 16&quot;&gt;Coach list&lt;/span&gt;</property>
+	  <property name="use_underline">False</property>
+	  <property name="use_markup">True</property>
+	  <property name="justify">GTK_JUSTIFY_LEFT</property>
+	  <property name="wrap">False</property>
+	  <property name="selectable">False</property>
+	  <property name="xalign">0.479999989271</property>
+	  <property name="yalign">0.5</property>
+	  <property name="xpad">0</property>
+	  <property name="ypad">0</property>
+	  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+	  <property name="width_chars">-1</property>
+	  <property name="single_line_mode">False</property>
+	  <property name="angle">0</property>
+	</widget>
+	<packing>
+	  <property name="x">376</property>
+	  <property name="y">16</property>
 	</packing>
       </child>
 
@@ -12139,6 +12141,7 @@ OnLeave</property>
 	  <property name="use_underline">True</property>
 	  <property name="relief">GTK_RELIEF_NORMAL</property>
 	  <property name="focus_on_click">True</property>
+	  <signal name="clicked" handler="on_coach_modifyed" last_modification_time="Sun, 07 Jun 2026 00:31:24 GMT"/>
 	</widget>
 	<packing>
 	  <property name="x">776</property>
