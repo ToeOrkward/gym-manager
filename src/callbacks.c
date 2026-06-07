@@ -9,6 +9,7 @@
 #include "interface.h"
 #include "support.h"
 #include "member.h"
+#include "coach.h"
 #include <ctype.h>
 #include <time.h> 
 
@@ -5899,7 +5900,159 @@ void
 on_coach_add_crud                      (GtkButton       *button,
                                         gpointer         user_data)
 {
+    GtkWidget *window = gtk_widget_get_toplevel(GTK_WIDGET(button));
+    if (!window || !GTK_IS_WINDOW(window)) {
+        g_print("Error: Could not find coach add window\n");
+        return;
+    }
 
+    GtkWidget *entry_firstname = lookup_widget(window, "entry26");
+    GtkWidget *entry_lastname = lookup_widget(window, "entry27");
+    GtkWidget *entry_phone = lookup_widget(window, "entry28");
+    GtkWidget *entry_cin = lookup_widget(window, "entry29");
+    GtkWidget *radiobutton_male = lookup_widget(window, "radiobutton19");
+    GtkWidget *radiobutton_female = lookup_widget(window, "radiobutton20");
+    GtkWidget *spinbutton_experience = lookup_widget(window, "spinbutton2");
+    GtkWidget *calendar = lookup_widget(window, "calendar2");
+    GtkWidget *spinbutton_contract = lookup_widget(window, "spinbutton4");
+    GtkWidget *entry_salary = lookup_widget(window, "entry30");
+    GtkWidget *combobox_startdate = lookup_widget(window, "comboboxentry1");
+    GtkWidget *entry_username = lookup_widget(window, "entry31");
+    GtkWidget *entry_password = lookup_widget(window, "entry32");
+
+    if (!entry_firstname || !entry_lastname || !entry_phone || !entry_cin ||
+        !radiobutton_male || !radiobutton_female || !spinbutton_experience ||
+        !calendar || !spinbutton_contract || !entry_salary ||
+        !combobox_startdate || !entry_username || !entry_password) {
+        GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(window),
+                                                  GTK_DIALOG_MODAL,
+                                                  GTK_MESSAGE_ERROR,
+                                                  GTK_BUTTONS_OK,
+                                                  "Error: Could not find all coach form fields!");
+        gtk_dialog_run(GTK_DIALOG(dialog));
+        gtk_widget_destroy(dialog);
+        return;
+    }
+
+    const gchar *firstname = gtk_entry_get_text(GTK_ENTRY(entry_firstname));
+    const gchar *lastname = gtk_entry_get_text(GTK_ENTRY(entry_lastname));
+    const gchar *phone = gtk_entry_get_text(GTK_ENTRY(entry_phone));
+    const gchar *cin_str = gtk_entry_get_text(GTK_ENTRY(entry_cin));
+    const gchar *salary_str = gtk_entry_get_text(GTK_ENTRY(entry_salary));
+    const gchar *username = gtk_entry_get_text(GTK_ENTRY(entry_username));
+    const gchar *password = gtk_entry_get_text(GTK_ENTRY(entry_password));
+    gchar *startdate = gtk_combo_box_get_active_text(GTK_COMBO_BOX(combobox_startdate));
+
+    gchar gender[20] = "";
+    if (gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(radiobutton_male))) {
+        strcpy(gender, "Male");
+    } else if (gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(radiobutton_female))) {
+        strcpy(gender, "Female");
+    }
+
+    gint experience = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(spinbutton_experience));
+    gint contract_duration = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(spinbutton_contract));
+
+    guint year, month, day;
+    gtk_calendar_get_date(GTK_CALENDAR(calendar), &year, &month, &day);
+    month += 1;
+    char hiring_date[20];
+    snprintf(hiring_date, sizeof(hiring_date), "%04d-%02d-%02d", year, month, day);
+
+    if (strlen(firstname) == 0 || strlen(lastname) == 0 || strlen(phone) == 0 ||
+        strlen(cin_str) == 0 || strlen(gender) == 0 || strlen(salary_str) == 0 ||
+        strlen(startdate) == 0 || strlen(username) == 0 || strlen(password) == 0) {
+        GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(window),
+                                                  GTK_DIALOG_MODAL,
+                                                  GTK_MESSAGE_ERROR,
+                                                  GTK_BUTTONS_OK,
+                                                  "Please complete all required coach fields before saving.");
+        gtk_dialog_run(GTK_DIALOG(dialog));
+        gtk_widget_destroy(dialog);
+        g_free(startdate);
+        return;
+    }
+
+    for (int i = 0; cin_str[i] != '\0'; i++) {
+        if (!isdigit(cin_str[i])) {
+            GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(window),
+                                                      GTK_DIALOG_MODAL,
+                                                      GTK_MESSAGE_ERROR,
+                                                      GTK_BUTTONS_OK,
+                                                      "CIN must contain only digits.");
+            gtk_dialog_run(GTK_DIALOG(dialog));
+            gtk_widget_destroy(dialog);
+            g_free(startdate);
+            return;
+        }
+    }
+
+    if (coach_exists("coach.txt", (char *)firstname, (char *)lastname)) {
+        GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(window),
+                                                  GTK_DIALOG_MODAL,
+                                                  GTK_MESSAGE_ERROR,
+                                                  GTK_BUTTONS_OK,
+                                                  "A coach with this name already exists.");
+        gtk_dialog_run(GTK_DIALOG(dialog));
+        gtk_widget_destroy(dialog);
+        g_free(startdate);
+        return;
+    }
+
+    coach new_coach;
+    strncpy(new_coach.firstname, firstname, sizeof(new_coach.firstname) - 1);
+    new_coach.firstname[sizeof(new_coach.firstname) - 1] = '\0';
+    strncpy(new_coach.lastname, lastname, sizeof(new_coach.lastname) - 1);
+    new_coach.lastname[sizeof(new_coach.lastname) - 1] = '\0';
+    strncpy(new_coach.gender, gender, sizeof(new_coach.gender) - 1);
+    new_coach.gender[sizeof(new_coach.gender) - 1] = '\0';
+    strncpy(new_coach.speciality, phone, sizeof(new_coach.speciality) - 1);
+    new_coach.speciality[sizeof(new_coach.speciality) - 1] = '\0';
+    snprintf(new_coach.level, sizeof(new_coach.level), "%d", experience);
+    strncpy(new_coach.status, startdate, sizeof(new_coach.status) - 1);
+    new_coach.status[sizeof(new_coach.status) - 1] = '\0';
+
+    int result = ajouter_coach("coach.txt", new_coach);
+    GtkWidget *dialog;
+    if (result == 1) {
+        dialog = gtk_message_dialog_new(GTK_WINDOW(window),
+                                       GTK_DIALOG_MODAL,
+                                       GTK_MESSAGE_INFO,
+                                       GTK_BUTTONS_OK,
+                                       "Coach saved successfully!\n"
+                                       "Hire date: %s\n"
+                                       "Experience: %d years\n"
+                                       "Contract duration: %d months\n"
+                                       "Status: %s",
+                                       hiring_date,
+                                       experience,
+                                       contract_duration,
+                                       startdate);
+        gtk_entry_set_text(GTK_ENTRY(entry_firstname), "");
+        gtk_entry_set_text(GTK_ENTRY(entry_lastname), "");
+        gtk_entry_set_text(GTK_ENTRY(entry_phone), "");
+        gtk_entry_set_text(GTK_ENTRY(entry_cin), "");
+        gtk_spin_button_set_value(GTK_SPIN_BUTTON(spinbutton_experience), 1.0);
+        gtk_spin_button_set_value(GTK_SPIN_BUTTON(spinbutton_contract), 1.0);
+        gtk_entry_set_text(GTK_ENTRY(entry_salary), "");
+        gtk_entry_set_text(GTK_ENTRY(entry_username), "");
+        gtk_entry_set_text(GTK_ENTRY(entry_password), "");
+        gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radiobutton_male), FALSE);
+        gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(radiobutton_female), FALSE);
+        gtk_combo_box_set_active(GTK_COMBO_BOX(combobox_startdate), 0);
+        gtk_dialog_run(GTK_DIALOG(dialog));
+        gtk_widget_destroy(dialog);
+    } else {
+        dialog = gtk_message_dialog_new(GTK_WINDOW(window),
+                                       GTK_DIALOG_MODAL,
+                                       GTK_MESSAGE_ERROR,
+                                       GTK_BUTTONS_OK,
+                                       "Error saving coach!");
+        gtk_dialog_run(GTK_DIALOG(dialog));
+        gtk_widget_destroy(dialog);
+    }
+
+    g_free(startdate);
 }
 
 
