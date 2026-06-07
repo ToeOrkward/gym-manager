@@ -4399,36 +4399,36 @@ create_CoachManagAdmin (void)
   GtkWidget *hbox92;
   GtkWidget *image127;
   GtkWidget *label190;
-  GtkWidget *button67;
-  GtkWidget *alignment91;
-  GtkWidget *hbox91;
-  GtkWidget *image126;
-  GtkWidget *label189;
-  GtkWidget *button66;
-  GtkWidget *alignment90;
-  GtkWidget *hbox90;
-  GtkWidget *image125;
-  GtkWidget *label187;
-  GtkWidget *button65;
-  GtkWidget *alignment89;
-  GtkWidget *hbox89;
-  GtkWidget *image124;
-  GtkWidget *label186;
-  GtkWidget *button64;
-  GtkWidget *alignment88;
-  GtkWidget *hbox88;
-  GtkWidget *image123;
-  GtkWidget *label185;
-  GtkWidget *button63;
-  GtkWidget *alignment87;
-  GtkWidget *hbox87;
-  GtkWidget *image122;
-  GtkWidget *label184;
   GtkWidget *button62;
   GtkWidget *alignment86;
   GtkWidget *hbox86;
   GtkWidget *image121;
   GtkWidget *label183;
+  GtkWidget *button63;
+  GtkWidget *alignment87;
+  GtkWidget *hbox87;
+  GtkWidget *image122;
+  GtkWidget *label184;
+  GtkWidget *button64;
+  GtkWidget *alignment88;
+  GtkWidget *hbox88;
+  GtkWidget *image123;
+  GtkWidget *label185;
+  GtkWidget *button65;
+  GtkWidget *alignment89;
+  GtkWidget *hbox89;
+  GtkWidget *image124;
+  GtkWidget *label186;
+  GtkWidget *button66;
+  GtkWidget *alignment90;
+  GtkWidget *hbox90;
+  GtkWidget *image125;
+  GtkWidget *label187;
+  GtkWidget *button67;
+  GtkWidget *alignment91;
+  GtkWidget *hbox91;
+  GtkWidget *image126;
+  GtkWidget *label189;
 
   CoachManagAdmin = gtk_window_new (GTK_WINDOW_TOPLEVEL);
   gtk_widget_set_size_request (CoachManagAdmin, 1000, 400);
@@ -4472,115 +4472,6 @@ create_CoachManagAdmin (void)
   gtk_widget_show (label190);
   gtk_box_pack_start (GTK_BOX (hbox92), label190, FALSE, FALSE, 0);
 
-  button67 = gtk_button_new ();
-  gtk_widget_show (button67);
-  gtk_fixed_put (GTK_FIXED (fixed24), button67, 797, 181);
-  gtk_widget_set_size_request (button67, 125, 125);
-
-  alignment91 = gtk_alignment_new (0.5, 0.5, 0, 0);
-  gtk_widget_show (alignment91);
-  gtk_container_add (GTK_CONTAINER (button67), alignment91);
-
-  hbox91 = gtk_hbox_new (FALSE, 2);
-  gtk_widget_show (hbox91);
-  gtk_container_add (GTK_CONTAINER (alignment91), hbox91);
-
-  image126 = create_pixmap (CoachManagAdmin, "statistical-analysis (2).png");
-  gtk_widget_show (image126);
-  gtk_box_pack_start (GTK_BOX (hbox91), image126, FALSE, FALSE, 0);
-  gtk_widget_set_size_request (image126, 50, 38);
-
-  label189 = gtk_label_new_with_mnemonic (_("Stats"));
-  gtk_widget_show (label189);
-  gtk_box_pack_start (GTK_BOX (hbox91), label189, FALSE, FALSE, 0);
-
-  button66 = gtk_button_new ();
-  gtk_widget_show (button66);
-  gtk_fixed_put (GTK_FIXED (fixed24), button66, 653, 181);
-  gtk_widget_set_size_request (button66, 125, 125);
-
-  alignment90 = gtk_alignment_new (0.5, 0.5, 0, 0);
-  gtk_widget_show (alignment90);
-  gtk_container_add (GTK_CONTAINER (button66), alignment90);
-
-  hbox90 = gtk_hbox_new (FALSE, 2);
-  gtk_widget_show (hbox90);
-  gtk_container_add (GTK_CONTAINER (alignment90), hbox90);
-
-  image125 = create_pixmap (CoachManagAdmin, "curve-arrow.png");
-  gtk_widget_show (image125);
-  gtk_box_pack_start (GTK_BOX (hbox90), image125, TRUE, TRUE, 0);
-  gtk_widget_set_size_request (image125, 51, 52);
-
-  label187 = gtk_label_new_with_mnemonic (_("Restore"));
-  gtk_widget_show (label187);
-  gtk_box_pack_start (GTK_BOX (hbox90), label187, FALSE, FALSE, 0);
-
-  button65 = gtk_button_new ();
-  gtk_widget_show (button65);
-  gtk_fixed_put (GTK_FIXED (fixed24), button65, 509, 181);
-  gtk_widget_set_size_request (button65, 125, 125);
-
-  alignment89 = gtk_alignment_new (0.5, 0.5, 0, 0);
-  gtk_widget_show (alignment89);
-  gtk_container_add (GTK_CONTAINER (button65), alignment89);
-
-  hbox89 = gtk_hbox_new (FALSE, 2);
-  gtk_widget_show (hbox89);
-  gtk_container_add (GTK_CONTAINER (alignment89), hbox89);
-
-  image124 = create_pixmap (CoachManagAdmin, "garbage (1).png");
-  gtk_widget_show (image124);
-  gtk_box_pack_start (GTK_BOX (hbox89), image124, TRUE, TRUE, 0);
-  gtk_widget_set_size_request (image124, 51, 46);
-
-  label186 = gtk_label_new_with_mnemonic (_("Delete"));
-  gtk_widget_show (label186);
-  gtk_box_pack_start (GTK_BOX (hbox89), label186, FALSE, FALSE, 0);
-
-  button64 = gtk_button_new ();
-  gtk_widget_show (button64);
-  gtk_fixed_put (GTK_FIXED (fixed24), button64, 365, 181);
-  gtk_widget_set_size_request (button64, 125, 125);
-
-  alignment88 = gtk_alignment_new (0.5, 0.5, 0, 0);
-  gtk_widget_show (alignment88);
-  gtk_container_add (GTK_CONTAINER (button64), alignment88);
-
-  hbox88 = gtk_hbox_new (FALSE, 2);
-  gtk_widget_show (hbox88);
-  gtk_container_add (GTK_CONTAINER (alignment88), hbox88);
-
-  image123 = create_pixmap (CoachManagAdmin, "compose.png");
-  gtk_widget_show (image123);
-  gtk_box_pack_start (GTK_BOX (hbox88), image123, FALSE, FALSE, 0);
-
-  label185 = gtk_label_new_with_mnemonic (_("Modify"));
-  gtk_widget_show (label185);
-  gtk_box_pack_start (GTK_BOX (hbox88), label185, FALSE, FALSE, 0);
-
-  button63 = gtk_button_new ();
-  gtk_widget_show (button63);
-  gtk_fixed_put (GTK_FIXED (fixed24), button63, 224, 184);
-  gtk_widget_set_size_request (button63, 125, 125);
-
-  alignment87 = gtk_alignment_new (0.5, 0.5, 0, 0);
-  gtk_widget_show (alignment87);
-  gtk_container_add (GTK_CONTAINER (button63), alignment87);
-
-  hbox87 = gtk_hbox_new (FALSE, 2);
-  gtk_widget_show (hbox87);
-  gtk_container_add (GTK_CONTAINER (alignment87), hbox87);
-
-  image122 = create_pixmap (CoachManagAdmin, "paper.png");
-  gtk_widget_show (image122);
-  gtk_box_pack_start (GTK_BOX (hbox87), image122, TRUE, TRUE, 0);
-  gtk_widget_set_size_request (image122, 51, 52);
-
-  label184 = gtk_label_new_with_mnemonic (_("List"));
-  gtk_widget_show (label184);
-  gtk_box_pack_start (GTK_BOX (hbox87), label184, FALSE, FALSE, 0);
-
   button62 = gtk_button_new ();
   gtk_widget_show (button62);
   gtk_fixed_put (GTK_FIXED (fixed24), button62, 77, 181);
@@ -4604,6 +4495,115 @@ create_CoachManagAdmin (void)
   gtk_widget_show (label183);
   gtk_box_pack_start (GTK_BOX (hbox86), label183, FALSE, FALSE, 0);
 
+  button63 = gtk_button_new ();
+  gtk_widget_show (button63);
+  gtk_fixed_put (GTK_FIXED (fixed24), button63, 224, 184);
+  gtk_widget_set_size_request (button63, 125, 125);
+
+  alignment87 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment87);
+  gtk_container_add (GTK_CONTAINER (button63), alignment87);
+
+  hbox87 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox87);
+  gtk_container_add (GTK_CONTAINER (alignment87), hbox87);
+
+  image122 = create_pixmap (CoachManagAdmin, "paper.png");
+  gtk_widget_show (image122);
+  gtk_box_pack_start (GTK_BOX (hbox87), image122, TRUE, TRUE, 0);
+  gtk_widget_set_size_request (image122, 51, 52);
+
+  label184 = gtk_label_new_with_mnemonic (_("List"));
+  gtk_widget_show (label184);
+  gtk_box_pack_start (GTK_BOX (hbox87), label184, FALSE, FALSE, 0);
+
+  button64 = gtk_button_new ();
+  gtk_widget_show (button64);
+  gtk_fixed_put (GTK_FIXED (fixed24), button64, 365, 181);
+  gtk_widget_set_size_request (button64, 125, 125);
+
+  alignment88 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment88);
+  gtk_container_add (GTK_CONTAINER (button64), alignment88);
+
+  hbox88 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox88);
+  gtk_container_add (GTK_CONTAINER (alignment88), hbox88);
+
+  image123 = create_pixmap (CoachManagAdmin, "compose.png");
+  gtk_widget_show (image123);
+  gtk_box_pack_start (GTK_BOX (hbox88), image123, FALSE, FALSE, 0);
+
+  label185 = gtk_label_new_with_mnemonic (_("Modify"));
+  gtk_widget_show (label185);
+  gtk_box_pack_start (GTK_BOX (hbox88), label185, FALSE, FALSE, 0);
+
+  button65 = gtk_button_new ();
+  gtk_widget_show (button65);
+  gtk_fixed_put (GTK_FIXED (fixed24), button65, 509, 181);
+  gtk_widget_set_size_request (button65, 125, 125);
+
+  alignment89 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment89);
+  gtk_container_add (GTK_CONTAINER (button65), alignment89);
+
+  hbox89 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox89);
+  gtk_container_add (GTK_CONTAINER (alignment89), hbox89);
+
+  image124 = create_pixmap (CoachManagAdmin, "garbage (1).png");
+  gtk_widget_show (image124);
+  gtk_box_pack_start (GTK_BOX (hbox89), image124, TRUE, TRUE, 0);
+  gtk_widget_set_size_request (image124, 51, 46);
+
+  label186 = gtk_label_new_with_mnemonic (_("Delete"));
+  gtk_widget_show (label186);
+  gtk_box_pack_start (GTK_BOX (hbox89), label186, FALSE, FALSE, 0);
+
+  button66 = gtk_button_new ();
+  gtk_widget_show (button66);
+  gtk_fixed_put (GTK_FIXED (fixed24), button66, 653, 181);
+  gtk_widget_set_size_request (button66, 125, 125);
+
+  alignment90 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment90);
+  gtk_container_add (GTK_CONTAINER (button66), alignment90);
+
+  hbox90 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox90);
+  gtk_container_add (GTK_CONTAINER (alignment90), hbox90);
+
+  image125 = create_pixmap (CoachManagAdmin, "curve-arrow.png");
+  gtk_widget_show (image125);
+  gtk_box_pack_start (GTK_BOX (hbox90), image125, TRUE, TRUE, 0);
+  gtk_widget_set_size_request (image125, 51, 52);
+
+  label187 = gtk_label_new_with_mnemonic (_("Restore"));
+  gtk_widget_show (label187);
+  gtk_box_pack_start (GTK_BOX (hbox90), label187, FALSE, FALSE, 0);
+
+  button67 = gtk_button_new ();
+  gtk_widget_show (button67);
+  gtk_fixed_put (GTK_FIXED (fixed24), button67, 797, 181);
+  gtk_widget_set_size_request (button67, 125, 125);
+
+  alignment91 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment91);
+  gtk_container_add (GTK_CONTAINER (button67), alignment91);
+
+  hbox91 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox91);
+  gtk_container_add (GTK_CONTAINER (alignment91), hbox91);
+
+  image126 = create_pixmap (CoachManagAdmin, "statistical-analysis (2).png");
+  gtk_widget_show (image126);
+  gtk_box_pack_start (GTK_BOX (hbox91), image126, FALSE, FALSE, 0);
+  gtk_widget_set_size_request (image126, 50, 38);
+
+  label189 = gtk_label_new_with_mnemonic (_("Stats"));
+  gtk_widget_show (label189);
+  gtk_box_pack_start (GTK_BOX (hbox91), label189, FALSE, FALSE, 0);
+
   /* Store pointers to all widgets, for use by lookup_widget(). */
   GLADE_HOOKUP_OBJECT_NO_REF (CoachManagAdmin, CoachManagAdmin, "CoachManagAdmin");
   GLADE_HOOKUP_OBJECT (CoachManagAdmin, fixed24, "fixed24");
@@ -4614,36 +4614,36 @@ create_CoachManagAdmin (void)
   GLADE_HOOKUP_OBJECT (CoachManagAdmin, hbox92, "hbox92");
   GLADE_HOOKUP_OBJECT (CoachManagAdmin, image127, "image127");
   GLADE_HOOKUP_OBJECT (CoachManagAdmin, label190, "label190");
-  GLADE_HOOKUP_OBJECT (CoachManagAdmin, button67, "button67");
-  GLADE_HOOKUP_OBJECT (CoachManagAdmin, alignment91, "alignment91");
-  GLADE_HOOKUP_OBJECT (CoachManagAdmin, hbox91, "hbox91");
-  GLADE_HOOKUP_OBJECT (CoachManagAdmin, image126, "image126");
-  GLADE_HOOKUP_OBJECT (CoachManagAdmin, label189, "label189");
-  GLADE_HOOKUP_OBJECT (CoachManagAdmin, button66, "button66");
-  GLADE_HOOKUP_OBJECT (CoachManagAdmin, alignment90, "alignment90");
-  GLADE_HOOKUP_OBJECT (CoachManagAdmin, hbox90, "hbox90");
-  GLADE_HOOKUP_OBJECT (CoachManagAdmin, image125, "image125");
-  GLADE_HOOKUP_OBJECT (CoachManagAdmin, label187, "label187");
-  GLADE_HOOKUP_OBJECT (CoachManagAdmin, button65, "button65");
-  GLADE_HOOKUP_OBJECT (CoachManagAdmin, alignment89, "alignment89");
-  GLADE_HOOKUP_OBJECT (CoachManagAdmin, hbox89, "hbox89");
-  GLADE_HOOKUP_OBJECT (CoachManagAdmin, image124, "image124");
-  GLADE_HOOKUP_OBJECT (CoachManagAdmin, label186, "label186");
-  GLADE_HOOKUP_OBJECT (CoachManagAdmin, button64, "button64");
-  GLADE_HOOKUP_OBJECT (CoachManagAdmin, alignment88, "alignment88");
-  GLADE_HOOKUP_OBJECT (CoachManagAdmin, hbox88, "hbox88");
-  GLADE_HOOKUP_OBJECT (CoachManagAdmin, image123, "image123");
-  GLADE_HOOKUP_OBJECT (CoachManagAdmin, label185, "label185");
-  GLADE_HOOKUP_OBJECT (CoachManagAdmin, button63, "button63");
-  GLADE_HOOKUP_OBJECT (CoachManagAdmin, alignment87, "alignment87");
-  GLADE_HOOKUP_OBJECT (CoachManagAdmin, hbox87, "hbox87");
-  GLADE_HOOKUP_OBJECT (CoachManagAdmin, image122, "image122");
-  GLADE_HOOKUP_OBJECT (CoachManagAdmin, label184, "label184");
   GLADE_HOOKUP_OBJECT (CoachManagAdmin, button62, "button62");
   GLADE_HOOKUP_OBJECT (CoachManagAdmin, alignment86, "alignment86");
   GLADE_HOOKUP_OBJECT (CoachManagAdmin, hbox86, "hbox86");
   GLADE_HOOKUP_OBJECT (CoachManagAdmin, image121, "image121");
   GLADE_HOOKUP_OBJECT (CoachManagAdmin, label183, "label183");
+  GLADE_HOOKUP_OBJECT (CoachManagAdmin, button63, "button63");
+  GLADE_HOOKUP_OBJECT (CoachManagAdmin, alignment87, "alignment87");
+  GLADE_HOOKUP_OBJECT (CoachManagAdmin, hbox87, "hbox87");
+  GLADE_HOOKUP_OBJECT (CoachManagAdmin, image122, "image122");
+  GLADE_HOOKUP_OBJECT (CoachManagAdmin, label184, "label184");
+  GLADE_HOOKUP_OBJECT (CoachManagAdmin, button64, "button64");
+  GLADE_HOOKUP_OBJECT (CoachManagAdmin, alignment88, "alignment88");
+  GLADE_HOOKUP_OBJECT (CoachManagAdmin, hbox88, "hbox88");
+  GLADE_HOOKUP_OBJECT (CoachManagAdmin, image123, "image123");
+  GLADE_HOOKUP_OBJECT (CoachManagAdmin, label185, "label185");
+  GLADE_HOOKUP_OBJECT (CoachManagAdmin, button65, "button65");
+  GLADE_HOOKUP_OBJECT (CoachManagAdmin, alignment89, "alignment89");
+  GLADE_HOOKUP_OBJECT (CoachManagAdmin, hbox89, "hbox89");
+  GLADE_HOOKUP_OBJECT (CoachManagAdmin, image124, "image124");
+  GLADE_HOOKUP_OBJECT (CoachManagAdmin, label186, "label186");
+  GLADE_HOOKUP_OBJECT (CoachManagAdmin, button66, "button66");
+  GLADE_HOOKUP_OBJECT (CoachManagAdmin, alignment90, "alignment90");
+  GLADE_HOOKUP_OBJECT (CoachManagAdmin, hbox90, "hbox90");
+  GLADE_HOOKUP_OBJECT (CoachManagAdmin, image125, "image125");
+  GLADE_HOOKUP_OBJECT (CoachManagAdmin, label187, "label187");
+  GLADE_HOOKUP_OBJECT (CoachManagAdmin, button67, "button67");
+  GLADE_HOOKUP_OBJECT (CoachManagAdmin, alignment91, "alignment91");
+  GLADE_HOOKUP_OBJECT (CoachManagAdmin, hbox91, "hbox91");
+  GLADE_HOOKUP_OBJECT (CoachManagAdmin, image126, "image126");
+  GLADE_HOOKUP_OBJECT (CoachManagAdmin, label189, "label189");
 
   return CoachManagAdmin;
 }
@@ -4657,9 +4657,6 @@ create_addCoachAdmin (void)
   GtkWidget *entry27;
   GtkWidget *entry28;
   GtkWidget *entry29;
-  GtkWidget *radiobutton19;
-  GSList *radiobutton19_group = NULL;
-  GtkWidget *radiobutton20;
   GtkObject *spinbutton2_adj;
   GtkWidget *spinbutton2;
   GtkWidget *calendar2;
@@ -4667,7 +4664,6 @@ create_addCoachAdmin (void)
   GtkObject *spinbutton4_adj;
   GtkWidget *spinbutton4;
   GtkWidget *entry30;
-  GtkWidget *comboboxentry1;
   GtkWidget *entry31;
   GtkWidget *entry32;
   GtkWidget *label208;
@@ -4693,6 +4689,10 @@ create_addCoachAdmin (void)
   GtkWidget *image130;
   GtkWidget *label192;
   GtkWidget *button70;
+  GtkWidget *radiobutton19;
+  GSList *radiobutton19_group = NULL;
+  GtkWidget *radiobutton20;
+  GtkWidget *comboboxentry1;
 
   addCoachAdmin = gtk_window_new (GTK_WINDOW_TOPLEVEL);
   gtk_widget_set_size_request (addCoachAdmin, 1000, 400);
@@ -4726,20 +4726,6 @@ create_addCoachAdmin (void)
   gtk_widget_set_size_request (entry29, 160, 27);
   gtk_entry_set_invisible_char (GTK_ENTRY (entry29), 8226);
 
-  radiobutton19 = gtk_radio_button_new_with_mnemonic (NULL, _("Male"));
-  gtk_widget_show (radiobutton19);
-  gtk_fixed_put (GTK_FIXED (fixed25), radiobutton19, 168, 272);
-  gtk_widget_set_size_request (radiobutton19, 66, 24);
-  gtk_radio_button_set_group (GTK_RADIO_BUTTON (radiobutton19), radiobutton19_group);
-  radiobutton19_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (radiobutton19));
-
-  radiobutton20 = gtk_radio_button_new_with_mnemonic (NULL, _("Female"));
-  gtk_widget_show (radiobutton20);
-  gtk_fixed_put (GTK_FIXED (fixed25), radiobutton20, 240, 272);
-  gtk_widget_set_size_request (radiobutton20, 77, 24);
-  gtk_radio_button_set_group (GTK_RADIO_BUTTON (radiobutton20), radiobutton19_group);
-  radiobutton19_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (radiobutton20));
-
   spinbutton2_adj = gtk_adjustment_new (1, 0, 100, 1, 10, 10);
   spinbutton2 = gtk_spin_button_new (GTK_ADJUSTMENT (spinbutton2_adj), 1, 0);
   gtk_widget_show (spinbutton2);
@@ -4770,14 +4756,6 @@ create_addCoachAdmin (void)
   gtk_fixed_put (GTK_FIXED (fixed25), entry30, 816, 99);
   gtk_widget_set_size_request (entry30, 160, 27);
   gtk_entry_set_invisible_char (GTK_ENTRY (entry30), 8226);
-
-  comboboxentry1 = gtk_combo_box_entry_new_text ();
-  gtk_widget_show (comboboxentry1);
-  gtk_fixed_put (GTK_FIXED (fixed25), comboboxentry1, 816, 152);
-  gtk_widget_set_size_request (comboboxentry1, 160, 27);
-  gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxentry1), _("Active"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxentry1), _("Inactive"));
-  gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxentry1), _("OnLeave"));
 
   entry31 = gtk_entry_new ();
   gtk_widget_show (entry31);
@@ -4912,6 +4890,31 @@ create_addCoachAdmin (void)
   gtk_fixed_put (GTK_FIXED (fixed25), button70, 778, 322);
   gtk_widget_set_size_request (button70, 138, 27);
 
+  radiobutton19 = gtk_radio_button_new_with_mnemonic (NULL, _("Male"));
+  gtk_widget_show (radiobutton19);
+  gtk_fixed_put (GTK_FIXED (fixed25), radiobutton19, 168, 272);
+  gtk_widget_set_size_request (radiobutton19, 66, 24);
+  gtk_radio_button_set_group (GTK_RADIO_BUTTON (radiobutton19), radiobutton19_group);
+  radiobutton19_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (radiobutton19));
+
+  radiobutton20 = gtk_radio_button_new_with_mnemonic (NULL, _("Female"));
+  gtk_widget_show (radiobutton20);
+  gtk_fixed_put (GTK_FIXED (fixed25), radiobutton20, 240, 272);
+  gtk_widget_set_size_request (radiobutton20, 77, 24);
+  gtk_radio_button_set_group (GTK_RADIO_BUTTON (radiobutton20), radiobutton19_group);
+  radiobutton19_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (radiobutton20));
+
+  comboboxentry1 = gtk_combo_box_entry_new_text ();
+  gtk_widget_show (comboboxentry1);
+  gtk_fixed_put (GTK_FIXED (fixed25), comboboxentry1, 816, 152);
+  gtk_widget_set_size_request (comboboxentry1, 160, 27);
+  gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxentry1), _("Active"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxentry1), _("Inactive"));
+  gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxentry1), _("OnLeave"));
+
+  g_signal_connect ((gpointer) button70, "clicked",
+                    G_CALLBACK (on_coach_add_crud),
+                    NULL);
   g_signal_connect ((gpointer) radiobutton19, "toggled",
                     G_CALLBACK (on_gender_toggled),
                     NULL);
@@ -4926,14 +4929,11 @@ create_addCoachAdmin (void)
   GLADE_HOOKUP_OBJECT (addCoachAdmin, entry27, "entry27");
   GLADE_HOOKUP_OBJECT (addCoachAdmin, entry28, "entry28");
   GLADE_HOOKUP_OBJECT (addCoachAdmin, entry29, "entry29");
-  GLADE_HOOKUP_OBJECT (addCoachAdmin, radiobutton19, "radiobutton19");
-  GLADE_HOOKUP_OBJECT (addCoachAdmin, radiobutton20, "radiobutton20");
   GLADE_HOOKUP_OBJECT (addCoachAdmin, spinbutton2, "spinbutton2");
   GLADE_HOOKUP_OBJECT (addCoachAdmin, calendar2, "calendar2");
   GLADE_HOOKUP_OBJECT (addCoachAdmin, label198, "label198");
   GLADE_HOOKUP_OBJECT (addCoachAdmin, spinbutton4, "spinbutton4");
   GLADE_HOOKUP_OBJECT (addCoachAdmin, entry30, "entry30");
-  GLADE_HOOKUP_OBJECT (addCoachAdmin, comboboxentry1, "comboboxentry1");
   GLADE_HOOKUP_OBJECT (addCoachAdmin, entry31, "entry31");
   GLADE_HOOKUP_OBJECT (addCoachAdmin, entry32, "entry32");
   GLADE_HOOKUP_OBJECT (addCoachAdmin, label208, "label208");
@@ -4959,6 +4959,9 @@ create_addCoachAdmin (void)
   GLADE_HOOKUP_OBJECT (addCoachAdmin, image130, "image130");
   GLADE_HOOKUP_OBJECT (addCoachAdmin, label192, "label192");
   GLADE_HOOKUP_OBJECT (addCoachAdmin, button70, "button70");
+  GLADE_HOOKUP_OBJECT (addCoachAdmin, radiobutton19, "radiobutton19");
+  GLADE_HOOKUP_OBJECT (addCoachAdmin, radiobutton20, "radiobutton20");
+  GLADE_HOOKUP_OBJECT (addCoachAdmin, comboboxentry1, "comboboxentry1");
 
   return addCoachAdmin;
 }

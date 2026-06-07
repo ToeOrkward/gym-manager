@@ -5858,3 +5858,11 @@ on_coach_displayed                     (GtkButton       *button,
 
 }
 
+
+void
+on_coach_add_crud                      (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+

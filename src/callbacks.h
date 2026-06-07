@@ -422,3 +422,7 @@ on_coach_restore                       (GtkButton       *button,
 void
 on_coach_displayed                     (GtkButton       *button,
                                         gpointer         user_data);
+
+void
+on_coach_add_crud                      (GtkButton       *button,
+                                        gpointer         user_data);
